@@ -1,0 +1,15 @@
+body  {
+  background-image: url(https://images.unsplash.com/photo-1613794713137-a78aba4be84a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmFiaWVzJTIwcGxheWluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60);
+  background-repeat: no-repeat;
+  margin: 0px;
+  background-size: cover;
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+p {
+  color: aquamarine;
+  font-size: 2.5em;
+  text-align: center;
+}

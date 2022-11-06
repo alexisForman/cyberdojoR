@@ -1,0 +1,52 @@
+<!-- <app-track-progress *ngFor="let participant of participantDetails"></app-track-progress> -->
+
+<div class="image" id="ninjaTablet">
+  <h1>My name is Cyber-Sabanim! I have so much to teach you today!</h1>
+  <img src="https://img.freepik.com/free-vector/cute-ninja-working-laptop-cartoon-vector-icon-illustration-people-technology-icon-isolated-flat_138676-4801.jpg"/>
+</div>
+
+<div class="container">
+  <h2>Who am I practicing with today?</h2>
+
+  <form (ngSubmit)="newParticipantRegistration(participant)" #participant="ngForm">
+
+    <div class="form-group">
+      <label for="user">What is your name?</label>
+      <input type="text" class="form-control" id="name" #nameRef="ngModel" ngModel name="name" required>
+      <span class="help-block text-danger" *ngIf="!nameRef.valid && nameRef.touched">I cant save your progress without knowing your name</span>
+    </div>
+
+    <div class="form-group">
+      <label for="age">How old are you?</label>
+      <input type="text" class="form-control" id="age" #ageRef="ngModel" ngModel name="age" required>
+      <span class="help-block text-danger" *ngIf="!ageRef.valid && ageRef.touched">Your age determines the length of your workouts</span>
+    </div>
+
+<div><label>Which belt do you wear?</label></div>
+
+  <div class="radio form-group column" *ngFor="let beltColor of beltRanks">
+    <label for="rank">
+      <input type="radio" class="form-control" name="beltColor" id="beltColor" ngModel #rankRef="ngModel" [value]="beltColor" required style="cursor:pointer;">
+      {{ beltColor }}
+    </label>
+    <span class="help-block text-danger" *ngIf="!rankRef.valid && rankRef.touched">Selecting your belt rank ensures your workout will include level appropriate movements</span>
+  </div>
+
+
+
+<button class="btn btn-danger" type="submit" [disabled]="!participant.valid" (click)="newParticipantToFirebase()" routerLink="/warmUp">SUBMIT YOUR INFORMATION TO TRACK YOUR PROGRESS</button>
+
+</form>
+
+<div class="row mt-4" *ngIf="formHasBeenSubmitted">
+  <div class="col-xs-12">
+    <h3> Participant's name: {{ participantDetails.name }} </h3>
+    <h4> Participant's age: {{ participantDetails.age }} </h4>
+    <h4> Participant's belt rank: {{ participantDetails.rank }}</h4>
+
+  </div>
+</div>
+
+  <!-- <router-outlet></router-outlet> -->
+
+
