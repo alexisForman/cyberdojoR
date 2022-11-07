@@ -18,6 +18,14 @@ export class VocabularyComponent implements OnInit {
   ngOnInit(): void {
   }
 
+//   runCarosel()  {
+//     const myCarouselElement = document.querySelector('#myCarousel')
+//     const carousel = new bootstrap.Carousel(myCarouselElement, {
+//   interval: 2000,
+//   wrap: false
+// })
+//   }
+
   chooseWord()  {
     let wbVocab = this.whiteRankVocab[Math.floor(Math.random()*this.whiteRankVocab.length)];
     console.log(wbVocab);
